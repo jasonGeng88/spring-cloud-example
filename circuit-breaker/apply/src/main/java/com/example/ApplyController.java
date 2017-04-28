@@ -1,0 +1,24 @@
+package com.example;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import java.net.URI;
+
+/**
+ * Created by jason-geng on 4/28/17.
+ */
+@RestController
+public class ApplyController {
+
+    @Autowired
+    private ApplyService applyService;
+
+    @RequestMapping("/apply")
+    public String apply(){
+        URI uri = URI.create("http://localhost:8080/hello");
+
+        return applyService.apply();
+    }
+}
